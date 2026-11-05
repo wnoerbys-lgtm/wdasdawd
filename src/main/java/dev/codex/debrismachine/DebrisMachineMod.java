@@ -54,7 +54,7 @@ public final class DebrisMachineMod implements ModInitializer {
             player.sendSystemMessage(Component.literal("Use /debris start north|south|east|west"));
             return 0;
         }
-        MACHINES.put(player.getUUID(), new Machine(player.getUUID(), player.serverLevel(),
+        MACHINES.put(player.getUUID(), new Machine(player.getUUID(), player.level(),
             player.blockPosition(), direction));
         player.sendSystemMessage(Component.literal("Debris miner started facing " + direction.getName() + ". It clears a 3x3 tunnel; use /debris stop to halt."));
         return 1;
@@ -78,7 +78,7 @@ public final class DebrisMachineMod implements ModInitializer {
         while (iterator.hasNext()) {
             Machine machine = iterator.next();
             ServerPlayer owner = server.getPlayerList().getPlayer(machine.owner);
-            if (owner == null || !owner.isAlive() || owner.serverLevel() != machine.level) {
+            if (owner == null || !owner.isAlive() || owner.level() != machine.level) {
                 iterator.remove();
                 continue;
             }
