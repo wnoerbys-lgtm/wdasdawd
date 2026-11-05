@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "id": "ancient_debris_machine",
+  "version": "${version}",
+  "name": "Ancient Debris Machine",
+  "description": "A command-operated, server-side 3x3 tunnel miner.",
+  "environment": "*",
+  "entrypoints": { "main": ["dev.codex.debrismachine.DebrisMachineMod"] },
+  "depends": {
+    "fabricloader": ">=0.18.1",
+    "minecraft": "1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
